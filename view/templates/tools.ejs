@@ -1,0 +1,27 @@
+
+<div class="dashboard-layout-tool inline-block">
+Layout:
+<select class="dashboard-select-layout form-control mr10">
+  <% let app = dashboard.apps[currentApp]; %>
+  <% for (var layout of app.layouts) { %>
+    <% let checked = layout === currentLayout ? 'selected' : ''%>
+    <option value="<%- layout %>" <%- checked %>>
+      <%= dashboard.getLayoutTitle(layout) %>
+    </option>
+  <% } %>
+</select>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    var $tools = $('.dashboard-layout-tool');
+    var $layouts = $tools.find('.dashboard-select-layout');
+    $layouts.change(function () {
+      Cookies.set('dashboard-layout', $layouts.val(), {expires: 30, path: ''});
+      location.reload();
+    });
+    $('.dashboard-tools').append($tools);
+  });
+</script>
+
+<%- layoutContent %>

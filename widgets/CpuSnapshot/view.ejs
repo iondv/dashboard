@@ -1,0 +1,86 @@
+
+<% let id = widget.generateId() %>
+<% let _cssBackground = typeof cssBackground === 'undefined' ? '' : cssBackground; %>
+<% let _cssProgress = typeof cssProgress === 'undefined' ? '' : cssProgress; %>
+<% let _params = typeof params === 'undefined' ? {} : params; %>
+
+<div id="<%- id%>" class="widget loading <%- _cssBackground %>"
+     data-params="<%= JSON.stringify(_params) %>">
+  <div class="widget-overlay">
+    <span class="glyphicon glyphicon-refresh spinning"></span>
+  </div>
+  <div class="widget-body">
+    <h3 class="widget-title">CPU load (%)</h3>
+    <div class="widget-content">
+      <div class="snap-container snap-lg">
+        <div class="snap-chart-holder chart-holder">
+          <canvas class="snap-chart-canvas"></canvas>
+        </div>
+        <div class="line-chart-holder chart-holder">
+          <canvas class="line-chart-canvas"></canvas>
+        </div>
+        <div class="info-holder">
+          <div class="info-item refresh-info-item">
+            <div class="info-item-label">Refresh rate</div>
+            <div class="info-item-value"></div>
+          </div>
+          <div class="info-item last-max-info-item">
+            <div class="info-item-label">Last max value</div>
+            <div class="info-item-value"></div>
+          </div>
+          <div class="info-item last-min-info-item">
+            <div class="info-item-label">Last min value</div>
+            <div class="info-item-value"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="widget-close">×</div>
+</div>
+
+<script>
+  (function () {
+    var $widget = $('#<%- id %>');
+    $widget.data('init', function () {
+      new Dashboard.CpuShapshot($widget, {
+        url: '<%- widget.getUrl() %>',
+        refreshDelay: 1000,
+        snapChart: {
+          data: {
+            labels: ['Load', 'Free'],
+            datasets: [{
+              data: [0, 100],
+              backgroundColor: ["#c00", "#0c0"],
+              borderWidth: 0
+            }]
+          }
+        },
+        lineChart: {
+          //labelFormat: 'mm:ss',
+          data: {
+            datasets: [{
+              borderColor:'#08c',
+              backgroundColor: 'rgba(0,100,250,0.1)',
+              borderWidth: 1,
+              radius: 2,
+              data:[]
+            }],
+          },
+          options: {
+            borderColor: '#c00',
+            scales: {
+              yAxes: [{
+                display: true,
+                ticks: {
+                  beginAtZero: true,
+                  max: 100
+                }
+              }]
+            }
+          }
+        }
+      });
+    });
+  })()
+</script>

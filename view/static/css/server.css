@@ -1,0 +1,38 @@
+
+.bg-white { background:#fff; }
+
+.widget-body { height: 100%; }
+.widget-title { font-size:21px; margin:10px 0 0 0; }
+.widget-content { position: relative; padding:20px 10px 0 10px; overflow: auto; height: calc(100% - 56px);}
+
+.snap-container { position: relative; height: 100%; }
+.chart-holder { position: absolute; left:0; top:0; height: 100%; width:100%; overflow: hidden; }
+.info-holder { position: absolute; text-align: left; overflow: hidden; padding:0; }
+
+.snap-chart-holder { width:30%; height:50%; }
+.info-holder { left:2%; top:58%; width:29%; height:42%;}
+.line-chart-holder { left:30%; width:70%; height:100%; }
+
+.info-item { margin-bottom:15px; font-weight: normal; }
+.info-item:last-child { margin-bottom: 0; }
+.info-item-label { display: block; margin-bottom: 5px; }
+.info-item-value { display: block; font-weight: bold; font-size:16px; }
+.info-item-value small { font-weight: normal; }
+
+.chart-canvas {  }
+.chart-middle { position: absolute; left:50%; top:50%;  }
+.chart-middle-content { }
+
+[data-sizey="2"][data-sizex="1"] .info-holder { }
+
+[data-sizey="1"][data-sizex="2"] .snap-chart-holder { left:0; width:25%; height:100%; }
+[data-sizey="1"][data-sizex="2"] .info-holder { left:73%; top:0; width:27%; height:100%; }
+[data-sizey="1"][data-sizex="2"] .line-chart-holder { left:25%; width:45%; height:100%; }
+
+[data-sizey="2"][data-sizex="1"] .snap-chart-holder { left:0; top:0; width:100%; height:25%; }
+[data-sizey="2"][data-sizex="1"] .info-holder { left:3%; top:67%; width:90%; height:32%; }
+[data-sizey="2"][data-sizex="1"] .line-chart-holder { left:0; top:30%; width:100%; height:32%; }
+
+[data-sizey="1"][data-sizex="1"] .snap-chart-holder { left:0; top:0; width:100%; height:50%; }
+[data-sizey="1"][data-sizex="1"] .info-holder { display: none; }
+[data-sizey="1"][data-sizex="1"] .line-chart-holder { left:0; top:50%; width:100%; height:50%; }

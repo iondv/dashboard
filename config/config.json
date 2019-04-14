@@ -1,0 +1,13 @@
+{
+  "parametrised": true,
+  "sysTitle": "[[sys.title]]",
+  "di" : {
+    "changelogFactory": {
+      "module": "core/impl/changelogger/DsChangelogFactory",
+      "options": {
+        "dataSource": "ion://Db"
+      }
+    }
+  },
+  "environment": "[[sys.env]]"
+}
