@@ -2,13 +2,14 @@
 
 // jscs:disable requireCapitalizedComments
 
-let path = require('path');
-let express = require('express');
-let router = express.Router();
-let di = require('core/di');
-let config = require('./config');
-let moduleName = require('./module-name');
-let dispatcher = require('./controllers');
+const path = require('path');
+const express = require('express');
+const router = express.Router();
+const di = require('core/di');
+const config = require('./config');
+const moduleName = require('./module-name');
+const dispatcher = require('./controllers');
+const isProduction = process.env.NODE_ENV === 'production';
 
 router.get('/', dispatcher.main);
 router.all('/widget/:id', dispatcher.refresh);
@@ -23,11 +24,12 @@ app.use(`/${moduleName}`, router);
 app._init = function () {
   return new Promise((resolve, reject)=> {
     di(moduleName, config.di, { module: app }, 'app').then(scope => {
+      let staticOptions = isProduction ? scope.settings.get(`staticOptions`) : undefined;
       let roots = scope.settings.get('dashboard.root');
       if (roots) {
         for (let id in roots) {
           let dir = path.join(__dirname, '../../', roots[id], 'static');
-          app.use(`/${moduleName}/${id}`, express.static(dir));
+          app.use(`/${moduleName}/${id}`, express.static(dir, staticOptions));
         }
       }
       let manager = require('./index');

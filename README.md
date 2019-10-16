@@ -1,102 +1,63 @@
-Эта страница на [Русском](/docs/ru/readme.md)
+This page in [Russian](/README_RU.md)
 
 # IONDV. Dashboard
 
-Dashboard is a IONDV. Framework module. 
+<h1 align="center"> <a href="https://www.iondv.com/"><img src="/dashboard.png" alt="IONDV. Dashboard" align="center"></a>
+</h1>  
 
-### Start with IONDV. Framework
+**Dashboard** - is an IONDV. Framework module. It is used to build a desktop panel, which displays information about the key objects of the system, organized in the form of widgets. It allows you to organize, highlight and display important information in brief for users.
 
-* [IONDV. Framework](https://github.com/iondv/framework/blob/master/README.md)
-* [IONDV. Framework Docs](https://github.com/iondv/framework/blob/master/docs/en/index.md)
+## IONDV. Framework in brief
 
-## Description 
+**IONDV. Framework** - is a node.js open source framework for developing accounting applications
+or microservices based on metadata and individual modules. Framework is a part of 
+instrumental digital platform to create enterprise 
+(ERP) apps. This platform consists of the following open-source components: the [IONDV. Framework](https://github.com/iondv/framework), the
+[modules](https://github.com/topics/iondv-module) и ready-made applications expanding it
+functionality, visual development environment [Studio](https://github.com/iondv/studio) to create metadata for the app.
 
-**IONDV. Dashboard** -  is a module designed to display brief information in the form of blocks, based on the widget model.
+* For more details, see [IONDV. Framework site](https://iondv.com). 
 
+* Documentation is available in the [Github repository](https://github.com/iondv/framework/blob/master/docs/en/index.md).
 
-### Dashboard Module Docs
+## Description
 
-**TODO** - docs from platform.
+The control panel consits of three basic entities - manager, layout and widget.
 
-# Модуль Панель управления (dashboard)
+**Manager** - is the main component of the module, responsible for creating and initializing widgets, layouts, connecting the panel to other modules.
 
-Панель управления состоит из трех базовых сущностей - менеджер, макет и виджет.
+**Layout** - is a template (.ejs - file extension), which defines the following components:
+* arrangement of widgets, 
+* options for widget templates, 
+* plugin to control the layout grid on the client (e.g. gridster), 
+* connection of shared resources.
 
-### Менеджер (manager)
+**Widget** - is an object that is located on the layout and interacts with the server via ajax-requests. 
 
-Менеджер - это основной компонент модуля, отвечающий за создание и инициализаци виджетов, макетов, подключение панели к другим модулям.
-```sh
-let manager = require('modules/dashboard/manager');
-```
+Widgets may be static, or may have a link to go to the list of system objects. _Static widget_ display information in the form specified for the widget image, or in the form of statistical data on the system objects, calculated by the specified formulas or conditions for filters. While _widgets with a link to the list of objects_ - display information about the number of objects that match the conditions in this list. [Read more about widget setting](/docs/ru/layouts.md).
 
-### Макет (layout)
+## Module Features
 
-Макет - это EJS шаблон, в котором определяются схема размешения виджетов, параметры ддя шаблонов виджетов, плагин для управления сеткой макета на клиенте (например gridster), подключаются общие ресурсы. 
+- Ensuring the formation of information blocks with digital and graphic data. 
+- Allows you to customize several groups of views and customize for each user.
 
-Базовые макеты модуля находятся в папке /dashboard/layouts. Опубликованные из мета-данных в папке /applications/${meta-namespace}/layouts.  
+## Intended use of the module using demo projects as an example
 
-Каждый макет имеет уникальный ID. При публикации макета из меты к ID добавляется префикс. 
-```sh
-let dashboard = require('modules/dashboard');
-dashboard.getLayout('demo');
-dashboard.getLayout('develop-and-test-demo');
-```
-При рендере макета необходимо передать объект manager.
-```sh
-res.render(dashboard.getLayout('demo'), { dashboard });
-```
+_Dashboard_ module is used in [pm-gov-ru.iondv.com](https://pm-gov-ru.iondv.com/geomap) demo project.
 
-### Виджет (widget)
+IONDV. Project-management is an application for project activities. A set of widgets for which summary information on the accounting objects created in the registry (projects, events, meetings, indicators, etc.) is displayed, where the current user is a participant. It's available on the control panel.
 
-Виджет - это объект, который размещается на макете и взаимодействует с сервером через ajax-запросы. 
+The following types of widgets are presented on the control panel:
 
-Базовые виджеты модуля находятся в папке /dashboard/widgets. Опубликованные из мета-данных в папке /applications/${meta-namespace}/widgets.  
+* **Object List Widget**. The widget provides information about the number of accounting objects displayed in the list to navigate the link. Information on objects is displayed in accordance with the filter conditions specified for both widgets and navigation.
 
-Виджет состоит из файла класса **index.js** и шаблона представления **view.ejs**.
-Класс должен наследоваться от базового класса /dashboard/base-widget или его потомков.
-
-- Метод **init()** отвечает за начальную инициализацию виджета при старте сервера.
-- Метод **refresh()** вызывается при получении ajax-запроса от клиента. 
-- Метод **job()** получает данные для виджета.
-
-Каждый виджет имеет уникальный ID. При публикации виджета из меты к ID добавляется префикс.
-```sh
-dashboard.getWidget('demo');
-dashboard.getWidget('develop-and-test-demo');
-```
-При рендере представления виджета необходимо передать объект widget.
-```sh
-<% var widget = dashboard.getWidget('develop-and-test-demo') %>
-<%- partial(widget.view, {widget}) %>
-```
-### Публикация из меты
-
-Пример структуры в applications/develop-and-test
-```sh
-    dashboard
-        layouts
-          demo-layout
-        widgets
-          demo-widget
-            index.js
-            view.ejs
-        static
-            layouts              
-            widgets
-              demo-widget 
-```
-
-* [Full Description]()
-* [Deploy]()
-
+* **Widget Summary Data**. The widget provides summary data for any of the accounting objects of the system. Its difference from the list of objects widget is that the information displayed in it depends only on the filter conditions specified directly for the widget itself, and not on the number of objects in the list for any navigation.
 
 
 --------------------------------------------------------------------------  
 
 
- #### [Licence](/LICENCE) &ensp;  [Contact us](https://iondv.com) &ensp;  [Russian](/docs/ru/readme.md)   &ensp; [FAQs](/faqs.md)          
-
-<div><img src="https://mc.iondv.com/watch/local/docs/dashboard" style="position:absolute; left:-9999px;" height=1 width=1 alt="iondv metrics"></div>
+ #### [Licence](/LICENCE) &ensp;  [Contact us](https://iondv.com) &ensp;    [Russian](/README_RU.md)   &ensp; [FAQs](/faqs.md)
 
 --------------------------------------------------------------------------  
 

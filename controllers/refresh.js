@@ -11,6 +11,6 @@ module.exports = function (req, res) {
       res.status(500).send(err);
     }
   } else {
-    res.status(404).send('Widget not found');
+    res.status(404).send('Виджет не найден');
   }
 };
