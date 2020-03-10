@@ -1,5 +1,6 @@
 /node_modules/*
 /view/vendor/*
+/view/node_modules/*
 # /applications/*
 # /view/static/applications/*
 /view/static/vendor/*
