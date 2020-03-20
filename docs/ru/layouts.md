@@ -9,12 +9,12 @@ let toggleParams = {};
 <link href="registry/app-vendor/highcharts/css/highcharts.css" rel="stylesheet">
 <script src="registry/app-static/js/highcharts.js"></script>
 
-<link href="dashboard/vendor/gridster-js/jquery.gridster.min.css" rel="stylesheet">
+<link href="dashboard/node_modules/gridster-js/dist/jquery.gridster.min.css" rel="stylesheet">
 <link href="dashboard/namespaceApp/layouts/gridster/gridster.css" rel="stylesheet">
 <link href="dashboard/namespaceApp/widgets/task/styles.css" rel="stylesheet">
 
-<script src="dashboard/vendor/gridster-js/jquery.gridster.min.js"></script>
-<script src="dashboard/vendor/gridster-js/jquery.gridster.with-extras.min.js"></script>
+<script src="dashboard/node_modules/gridster-js/dist/jquery.gridster.min.js"></script>
+<script src="dashboard/node_modules/gridster-js/dist/jquery.gridster.with-extras.min.js"></script>
 <script src="dashboard/js/gridster-helper.js"></script>
 <script src="dashboard/namespaceApp/widgets/scripts.js"></script>
 
