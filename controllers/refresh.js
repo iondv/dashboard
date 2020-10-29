@@ -1,5 +1,5 @@
 'use strict';
-
+const {t} = require('core/i18n');
 let dashboard = require('../index');
 
 module.exports = function (req, res) {
@@ -11,6 +11,6 @@ module.exports = function (req, res) {
       res.status(500).send(err);
     }
   } else {
-    res.status(404).send('Виджет не найден');
+    res.status(404).send(t('No widgets found'));
   }
 };
