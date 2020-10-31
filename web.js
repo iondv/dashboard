@@ -24,7 +24,7 @@ app.use(`/${moduleName}`, router);
 
 app._init = function () {
   return load(path.join(__dirname, 'i18n'))
-    .then(di(moduleName, config.di, { module: app }, 'app'))
+    .then(() => di(moduleName, config.di, { module: app }, 'app'))
     .then(scope => {
       let staticOptions = isProduction ? scope.settings.get(`staticOptions`) : undefined;
       let roots = scope.settings.get('dashboard.root');
