@@ -31,12 +31,12 @@ class Manager {
       layout: params.currentLayout,
       ...params
     };
-    params.res.app.render(layout, p, (err, data)=> {
+    params.res.render(layout, p, (err, data)=> {
       if (err) {
         return cb(err);
       }
       p.layoutContent = data;
-      params.res.app.render(path.join(__dirname, 'view/templates/tools.ejs'), p, cb);
+      params.res.render(path.join(__dirname, 'view/templates/tools.ejs'), p, cb);
     });
   }
 
