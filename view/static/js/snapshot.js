@@ -114,7 +114,7 @@
     },
 
     updateInfo: function () {
-      this.setInfoValue('refresh', parseInt(this.params.refreshDelay / 1000) +' сек.');
+      this.setInfoValue('refresh', parseInt(this.params.refreshDelay / 1000) +' sec.');
       this.setLastMaxInfo();
       this.setLastMinInfo();
     },
