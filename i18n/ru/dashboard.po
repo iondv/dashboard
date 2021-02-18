@@ -3,88 +3,91 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-12 20:16+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2021-02-18 02:22+0000\n"
+"PO-Revision-Date: 2021-02-17 08:10+0000\n"
+"Last-Translator: Alena Kremenetskaya <alena.kremenetskaya@mail.ru>\n"
+"Language-Team: Russian <http://weblate.iondv.ru/projects/iondv-framework/"
+"dashboard/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: controllers/refresh.js:14
 msgid "No widgets found"
-msgstr ""
+msgstr "Виджеты не найдены"
 
 #: index.js:26
 msgid "Dashboard layout not set up."
-msgstr ""
+msgstr "Макет дашборда не настроен."
 
 #: index.js:117
 #, javascript-format
 msgid "Layout %s not found"
-msgstr ""
+msgstr "Макет %s не найден"
 
 #: index.js:126
 #, javascript-format
 msgid "Widget %s not found"
-msgstr ""
+msgstr "Виджет %s не найден"
 
 #: index.js:197
 #, javascript-format
 msgid "Widget does not inherit from: %s"
-msgstr ""
+msgstr "Виджет не наследуется от: %s"
 
 #: index.js:211
 #, javascript-format
 msgid "Widget class is not defined: %s"
-msgstr ""
+msgstr "Класс виджета не определен: %s"
 
 #: view/templates/tools.ejs:3
 msgid "Layout:"
-msgstr ""
+msgstr "Макет:"
 
 #: widgets/RamSnapshot/view.ejs:13
 msgid "RAM usage (Mb)"
-msgstr ""
+msgstr "Использование оперативной памяти (Мб)"
 
 #: widgets/RamSnapshot/view.ejs:24 widgets/HddSnapshot/view.ejs:24
 #: widgets/CpuSnapshot/view.ejs:24
 msgid "Refresh period"
-msgstr ""
+msgstr "Период обновления"
 
 #: widgets/RamSnapshot/view.ejs:28 widgets/HddSnapshot/view.ejs:28
 #: widgets/CpuSnapshot/view.ejs:28
 msgid "Last max value"
-msgstr ""
+msgstr "Последнее максимальное значение"
 
 #: widgets/RamSnapshot/view.ejs:32 widgets/HddSnapshot/view.ejs:32
 #: widgets/CpuSnapshot/view.ejs:32
 msgid "Last min value"
-msgstr ""
+msgstr "Последнее минимальное значение"
 
 #: widgets/RamSnapshot/view.ejs:51 widgets/HddSnapshot/view.ejs:51
 msgid "Used"
-msgstr ""
+msgstr "Используется"
 
 #: widgets/RamSnapshot/view.ejs:51 widgets/HddSnapshot/view.ejs:51
 #: widgets/CpuSnapshot/view.ejs:51
 msgid "Free"
-msgstr ""
+msgstr "Свободно"
 
 #: widgets/HddSnapshot/view.ejs:13
 msgid "HDD usage (Gb)"
-msgstr ""
+msgstr "Использование жесткого диска (Гб)"
 
 #: widgets/CpuSnapshot/view.ejs:13
 msgid "CPU load (%)"
-msgstr ""
+msgstr "Загрузка процессора (%)"
 
 #: widgets/CpuSnapshot/view.ejs:51
 msgid "Busy"
-msgstr ""
+msgstr "Занято"
