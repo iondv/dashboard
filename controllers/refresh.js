@@ -1,6 +1,6 @@
 'use strict';
-const {t} = require('core/i18n');
-let dashboard = require('../index');
+const {t} = require('@iondv/i18n');
+let dashboard = require('../Manager');
 
 module.exports = function (req, res) {
   let widget = dashboard.getWidget(req.params.id);

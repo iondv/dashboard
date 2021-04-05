@@ -3,7 +3,7 @@
   "sysTitle": "[[sys.title]]",
   "di" : {
     "changelogFactory": {
-      "module": "core/impl/changelogger/DsChangelogFactory",
+      "module": "@iondv/commons/lib/changelogger/DsChangelogFactory",
       "options": {
         "dataSource": "ion://Db"
       }

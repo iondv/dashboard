@@ -16,12 +16,13 @@
   },
   "private": true,
   "scripts": {
-    "start": "",
-    "test": "gulp test"
+    "install": "cd view/default/static && npm install"
   },
   "dependencies": {
     "async": "^2.6.0",
     "diskspace": "^1.0.3",
-    "os-utils": "^0.0.14"
+    "os-utils": "^0.0.14",
+    "@iondv/commons": "iondv/commons#main",
+    "@iondv/core": "iondv/core#main"
   }
 }

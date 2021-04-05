@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const IonLogger = require('core/impl/log/IonLogger');
+const IonLogger = require('@iondv/commons/lib/log/IonLogger');
 const sysLog = new IonLogger({});
 
 module.exports = class Base {
@@ -13,7 +13,7 @@ module.exports = class Base {
   constructor (id) {
     this.id = id;
     this.view = path.join(this.constructor.dir, 'view');
-    this.di = require('core/di');
+    this.di = require('@iondv/core').di;
     this.scope = this.di.context('dashboard');
     this.repo = this.scope.dataRepo;
   }

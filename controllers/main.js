@@ -1,6 +1,6 @@
 'use strict';
 
-let dashboard = require('../index');
+let dashboard = require('../Manager');
 
 module.exports = function (req, res, next) {
   try {
