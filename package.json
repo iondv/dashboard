@@ -4,7 +4,6 @@
   "homepage": "https://github.com/iondv/dashboard",
   "license": "Apache License 2.0",
   "engines": {
-    "node": ">=8.11.0",
     "ion": "4.1.0"
   },
   "repository": {
