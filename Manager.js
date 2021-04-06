@@ -36,7 +36,7 @@ class Manager {
         return cb(err);
       }
       p.layoutContent = data;
-      params.res.render(path.join(__dirname, 'view/templates/tools.ejs'), p, cb);
+      params.res.render(path.join(__dirname, 'view/default/templates/tools.ejs'), p, cb);
     });
   }
 
