@@ -55,7 +55,7 @@ class Manager {
           this.apps[id] = {
             layouts: {},
             widgets: {},
-            root: path.join(__dirname, '../../', roots[id])
+            root: path.join(__dirname, '../../../', roots[id])
           };
         }
       }
@@ -82,7 +82,7 @@ class Manager {
       for (let id in config) {
         if (config.hasOwnProperty(id)) {
           let root = path.join(__dirname, '../../', config[id].root);
-          this.expressApp.use(`/${moduleName}/${id}`, express.static(path.join(root, 'static')));
+          this.expressApp.use(`/${id}`, express.static(path.join(root, 'static')));
           this.apps[id] = {
             layouts: setLayouts(path.join(root, 'layouts'), this.layouts, `${id}-`),
             widgets: setWidgets(path.join(root, 'widgets'), this.widgets, `${id}-`),

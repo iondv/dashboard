@@ -11,5 +11,7 @@
 /view/static/js/plugins/*
 /.directory
 /**/*.ini
+view/*/static/node_modules
+view/*/static/package-lock.json
 /package-lock.json
 /.git-*/*
